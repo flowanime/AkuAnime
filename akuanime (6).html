@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AkuAnime — Actualités Anime & Manga en Français</title>
+<meta name="description" content="AkuAnime : toute l'actualité anime et manga en français. News, sorties, reviews, tops et calendrier — mis à jour quotidiennement.">
+<meta name="keywords" content="anime, manga, actualité anime, news anime, sorties anime 2026, one piece, demon slayer, jujutsu kaisen, akuanime">
+<meta name="author" content="AkuAnime">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://akuanime.fr/">
+
+<!-- Open Graph / Facebook / Discord -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://akuanime.fr/">
+<meta property="og:title" content="AkuAnime — Actualités Anime & Manga en Français">
+<meta property="og:description" content="Toute l'actualité anime et manga en français. News, sorties, reviews, tops — mis à jour quotidiennement.">
+<meta property="og:image" content="https://akuanime.fr/og-image.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="AkuAnime">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@AkuAnime">
+<meta name="twitter:title" content="AkuAnime — Actualités Anime & Manga">
+<meta name="twitter:description" content="Toute l'actualité anime et manga en français.">
+<meta name="twitter:image" content="https://akuanime.fr/og-image.jpg">
+
+<!-- Schema.org WebSite -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"AkuAnime","url":"https://akuanime.fr","description":"Actualités anime et manga en français","inLanguage":"fr","potentialAction":{"@type":"SearchAction","target":"https://akuanime.fr/?q={search_term_string}","query-input":"required name=search_term_string"}}
+</script>
+
+<meta name="google-adsense-account" content="ca-pub-2742017500165229">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2742017500165229" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#07070f;--dark:#0d0d1c;--card:#11111f;
+  --border:rgba(180,120,255,0.12);
+  --accent1:#7c3aed;--accent2:#a855f7;--accent3:#ec4899;
+  --grad:linear-gradient(135deg,#7c3aed,#a855f7,#ec4899);
+  --text:#f0eeff;--muted:#7a6e9a;--tag:#ffffff06
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+
+/* TICKER */
+.ticker{background:var(--grad);height:34px;overflow:hidden;display:flex;align-items:center}
+.ticker-track{display:flex;animation:tick 50s linear infinite;white-space:nowrap}
+.ticker-item{font-family:'Bebas Neue';font-size:13px;letter-spacing:2px;padding:0 48px;color:white}
+.ticker-item::before{content:'◆  ';opacity:.5}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:300;background:rgba(7,7,15,0.97);border-bottom:1px solid var(--border);backdrop-filter:blur(24px)}
+.nav-wrap{max-width:1280px;margin:0 auto;padding:0 28px;height:62px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Bebas Neue';font-size:26px;letter-spacing:5px;text-decoration:none;color:var(--text);display:flex;align-items:center;gap:8px;cursor:pointer}
+.logo em{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal}
+.logo-dot{width:5px;height:5px;background:var(--accent2);border-radius:50%;animation:blink 2s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.nav-links{display:flex;gap:2px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;padding:6px 13px;border-radius:4px;transition:color .2s;cursor:pointer}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600}
+.search-wrap{position:relative}
+.search-box{background:var(--tag);border:1px solid var(--border);border-radius:6px;padding:7px 14px;color:var(--text);font-size:13px;font-family:'DM Sans';outline:none;width:180px;transition:all .2s}
+.search-box:focus{border-color:rgba(168,85,247,.4);width:220px}
+.search-box::placeholder{color:var(--muted)}
+
+/* GLOW BAR */
+.glow-bar{height:3px;background:var(--grad);width:100%}
+
+/* AD */
+.ad-banner{background:var(--dark);border-bottom:1px solid var(--border);display:flex;justify-content:center;align-items:center;padding:10px;min-height:80px}
+.ad-ph{background:var(--tag);border:1px dashed rgba(180,120,255,.1);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
+.ad-lbl{font-size:9px;color:rgba(255,255,255,.15);letter-spacing:2px;text-transform:uppercase}
+.ad-lbl2{font-size:10px;color:rgba(255,255,255,.08);font-family:monospace}
+
+/* PAGES */
+.page-view{display:none}
+.page-view.active{display:block}
+
+/* HERO */
+.hero{max-width:1280px;margin:0 auto;padding:28px 28px 0;display:grid;grid-template-columns:1fr 340px;gap:12px}
+.hero-main{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:16/9;background:var(--card);display:block;text-decoration:none;cursor:pointer}
+.hero-bg{width:100%;height:100%;background:linear-gradient(135deg,#1a0535,#0d1045,#2a0530);display:flex;align-items:center;justify-content:center;font-size:100px;transition:transform .6s}
+.hero-main:hover .hero-bg{transform:scale(1.04)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.95) 0%,rgba(0,0,0,.3) 50%,transparent 100%)}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:28px}
+.hero-badge{display:inline-block;background:var(--grad);color:white;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:10px}
+.hero-title{font-family:'Bebas Neue';font-size:clamp(22px,2.8vw,34px);letter-spacing:1px;line-height:1.1;color:white;margin-bottom:8px}
+.hero-meta{font-size:12px;color:rgba(255,255,255,.4);display:flex;gap:14px}
+.hero-aside{display:flex;flex-direction:column;gap:10px}
+.aside-card{display:flex;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;text-decoration:none;transition:all .2s;cursor:pointer}
+.aside-card:hover{border-color:rgba(168,85,247,.35);transform:translateX(3px)}
+.aside-thumb{width:88px;height:62px;flex-shrink:0;background:linear-gradient(135deg,#1a0535,#0d1045);display:flex;align-items:center;justify-content:center;font-size:24px}
+.aside-body{padding:8px 10px 8px 0;flex:1;min-width:0}
+.aside-tag{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:3px}
+.aside-title{font-size:12px;color:var(--text);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.aside-date{font-size:10px;color:var(--muted);margin-top:3px}
+
+/* LAYOUT */
+.main-layout{max-width:1280px;margin:36px auto 0;padding:0 28px 80px;display:grid;grid-template-columns:1fr 290px;gap:32px;align-items:start}
+.sec-head{display:flex;align-items:center;gap:12px;margin:0 0 16px}
+.sec-title{font-family:'Bebas Neue';font-size:18px;letter-spacing:3px;white-space:nowrap;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sec-line{flex:1;height:1px;background:linear-gradient(to right,rgba(124,58,237,.4),transparent)}
+.sec-more{font-size:11px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;font-weight:600;letter-spacing:.5px;white-space:nowrap;cursor:pointer}
+
+/* ARTICLE CARDS */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:36px}
+.art-card{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;text-decoration:none;display:block;transition:all .2s;cursor:pointer}
+.art-card:hover{border-color:rgba(168,85,247,.3);transform:translateY(-3px)}
+.art-thumb{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:36px}
+.t1{background:linear-gradient(135deg,#1a0535,#0a1050)}
+.t2{background:linear-gradient(135deg,#0a1a30,#200540)}
+.t3{background:linear-gradient(135deg,#1a0530,#0a0a30)}
+.t4{background:linear-gradient(135deg,#0a1530,#300a40)}
+.t5{background:linear-gradient(135deg,#180a40,#0a1530)}
+.t6{background:linear-gradient(135deg,#200535,#0a1a40)}
+.art-body{padding:12px}
+.art-tag{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+.art-title{font-size:13px;color:var(--text);line-height:1.5;margin-bottom:6px}
+.art-excerpt{font-size:11px;color:var(--muted);line-height:1.6;margin-bottom:7px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.art-meta{font-size:10px;color:var(--muted);display:flex;justify-content:space-between}
+.ad-mid{display:flex;justify-content:center;margin:8px 0 36px}
+
+/* TOP LIST */
+.top-list{display:flex;flex-direction:column;gap:8px;margin-bottom:36px}
+.top-item{display:flex;align-items:center;gap:12px;padding:11px;background:var(--card);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .2s;cursor:pointer}
+.top-item:hover{border-color:rgba(168,85,247,.3)}
+.top-num{font-family:'Bebas Neue';font-size:24px;min-width:30px;line-height:1;color:var(--border)}
+.top-item:nth-child(1) .top-num{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.top-item:nth-child(2) .top-num{color:#b0b0c0}
+.top-item:nth-child(3) .top-num{color:#cd7f32}
+.top-ico{width:44px;height:44px;border-radius:4px;background:linear-gradient(135deg,#1a0535,#0d1045);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.top-name{font-size:13px;color:var(--text);margin-bottom:2px}
+.top-sub{font-size:10px;color:var(--muted)}
+
+/* SIDEBAR */
+.sidebar-widget{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:14px}
+.widget-head{padding:11px 14px;border-bottom:1px solid var(--border);font-family:'Bebas Neue';font-size:13px;letter-spacing:3px;color:var(--muted)}
+.widget-body{padding:12px 14px}
+.sidebar-list{display:flex;flex-direction:column;gap:10px}
+.sidebar-item{display:flex;gap:9px;text-decoration:none;padding-bottom:10px;border-bottom:1px solid var(--border);cursor:pointer}
+.sidebar-item:last-child{border-bottom:none;padding-bottom:0}
+.sidebar-ico{width:40px;height:40px;border-radius:4px;background:linear-gradient(135deg,#1a0535,#0d1045);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.sidebar-title{font-size:11px;color:var(--text);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:2px}
+.sidebar-date{font-size:10px;color:var(--muted)}
+.tags-cloud{display:flex;flex-wrap:wrap;gap:6px}
+.tag{background:var(--tag);border:1px solid var(--border);border-radius:20px;padding:4px 11px;font-size:11px;color:var(--muted);cursor:pointer;transition:all .2s}
+.tag:hover{border-color:rgba(168,85,247,.5);color:var(--accent2)}
+
+/* NEWSLETTER */
+.newsletter{background:linear-gradient(135deg,#1a0535,#0d0d2a,#2a0520);border:1px solid rgba(168,85,247,.2);border-radius:10px;padding:28px;text-align:center;margin-bottom:36px}
+.nl-title{font-family:'Bebas Neue';font-size:22px;letter-spacing:3px;margin-bottom:6px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nl-desc{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6}
+.nl-form{display:flex;gap:8px;max-width:380px;margin:0 auto}
+.nl-input{flex:1;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:6px;padding:9px 14px;color:var(--text);font-size:13px;font-family:'DM Sans';outline:none}
+.nl-btn{background:var(--grad);border:none;border-radius:6px;padding:9px 18px;color:white;font-size:13px;font-weight:600;font-family:'DM Sans';cursor:pointer}
+
+/* SECTION PAGES (News, Sorties, etc.) */
+.section-page{max-width:1280px;margin:36px auto;padding:0 28px 80px}
+.section-page h2{font-family:'Bebas Neue';font-size:32px;letter-spacing:4px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+.section-page .sub{font-size:13px;color:var(--muted);margin-bottom:32px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+
+/* ARTICLE MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:500;display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;opacity:0;pointer-events:none;transition:opacity .25s;overflow-y:auto}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--dark);border:1px solid var(--border);border-radius:14px;max-width:780px;width:100%;margin:auto;overflow:hidden;transform:translateY(30px);transition:transform .3s}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal-hero{width:100%;height:240px;display:flex;align-items:center;justify-content:center;font-size:80px;background:linear-gradient(135deg,#1a0535,#0d1045,#2a0530);position:relative}
+.modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;background:rgba(0,0,0,.6);border:1px solid var(--border);border-radius:50%;color:var(--muted);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:color .2s}
+.modal-close:hover{color:var(--text)}
+.modal-body{padding:32px}
+.modal-tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+.modal-title{font-family:'Bebas Neue';font-size:28px;letter-spacing:1px;line-height:1.15;color:var(--text);margin-bottom:12px}
+.modal-meta{font-size:11px;color:var(--muted);display:flex;gap:16px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.modal-content{font-size:14px;color:#c8c0e0;line-height:1.85}
+.modal-content p{margin-bottom:16px}
+.modal-content h3{font-family:'Bebas Neue';font-size:18px;letter-spacing:2px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:24px 0 10px}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:1px solid var(--border)}
+.footer-inner{max-width:1280px;margin:0 auto;padding:40px 28px 20px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.f-logo{font-family:'Bebas Neue';font-size:22px;letter-spacing:5px;color:var(--text);margin-bottom:8px}
+.f-logo em{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal}
+.f-desc{font-size:12px;color:var(--muted);line-height:1.7;max-width:240px}
+.f-social{display:flex;gap:8px;margin-top:14px}
+.f-social a{width:32px;height:32px;background:var(--tag);border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none}
+.f-col h4{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.f-col a{display:block;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:7px}
+.footer-bottom{border-top:1px solid var(--border);padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-copy{font-size:11px;color:var(--muted)}
+
+/* SHARE BUTTONS */
+.modal-share{display:flex;align-items:center;gap:8px;margin-top:24px;padding-top:20px;border-top:1px solid var(--border);flex-wrap:wrap}
+.share-lbl{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-right:4px}
+.share-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:6px;font-size:12px;font-weight:600;font-family:'DM Sans';cursor:pointer;border:none;text-decoration:none;transition:opacity .2s}
+.share-btn:hover{opacity:.82}
+.share-x{background:#000;color:#fff}
+.share-fb{background:#1877F2;color:#fff}
+.share-wa{background:#25D366;color:#fff}
+.share-copy{background:var(--tag);border:1px solid var(--border);color:var(--text)}
+
+/* ANIMATIONS */
+.fade{opacity:0;transform:translateY(14px);animation:fadeUp .45s ease forwards}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.fade:nth-child(1){animation-delay:.05s}.fade:nth-child(2){animation-delay:.1s}.fade:nth-child(3){animation-delay:.15s}.fade:nth-child(4){animation-delay:.2s}.fade:nth-child(5){animation-delay:.25s}.fade:nth-child(6){animation-delay:.3s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.hero{grid-template-columns:1fr}.hero-aside{display:grid;grid-template-columns:1fr 1fr}.main-layout{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.grid4{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.grid3,.grid4{grid-template-columns:1fr}.hero-aside{grid-template-columns:1fr}.nav-links,.search-wrap{display:none}.footer-grid{grid-template-columns:1fr}.nl-form{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<!-- ARTICLE MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <div class="modal-hero" id="modalEmoji"></div>
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div class="modal-body">
+      <div class="modal-tag" id="modalTag"></div>
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-meta" id="modalMeta"></div>
+      <div class="modal-content" id="modalContent"></div>
+      <div class="modal-share" id="modalShare">
+        <span class="share-lbl">Partager</span>
+        <a class="share-btn share-x" id="shareX" href="#" target="_blank" rel="noopener">𝕏 Twitter</a>
+        <a class="share-btn share-fb" id="shareFB" href="#" target="_blank" rel="noopener">f Facebook</a>
+        <a class="share-btn share-wa" id="shareWA" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <button class="share-btn share-copy" onclick="copyLink()">🔗 Copier</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GLOW BAR -->
+<div class="glow-bar"></div>
+
+<!-- TICKER -->
+<div class="ticker"><div class="ticker-track">
+<span class="ticker-item">Saison Printemps 2026 — Tous les nouveaux animes annoncés</span>
+<span class="ticker-item">One Piece — L'arc Elbaf confirmé pour cet été</span>
+<span class="ticker-item">Demon Slayer — Film confirmé pour décembre 2026</span>
+<span class="ticker-item">My Hero Academia — La saison finale arrive en octobre</span>
+<span class="ticker-item">Jujutsu Kaisen — Chapitre 300 disponible</span>
+<span class="ticker-item">Solo Leveling saison 2 — date de sortie révélée</span>
+<span class="ticker-item">Saison Printemps 2026 — Tous les nouveaux animes annoncés</span>
+<span class="ticker-item">One Piece — L'arc Elbaf confirmé pour cet été</span>
+<span class="ticker-item">Demon Slayer — Film confirmé pour décembre 2026</span>
+<span class="ticker-item">My Hero Academia — La saison finale arrive en octobre</span>
+</div></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-wrap">
+    <span class="logo" onclick="showPage('accueil')"><em>Aku</em>Anime <div class="logo-dot"></div></span>
+    <div class="nav-links">
+      <a onclick="showPage('accueil')" id="nav-accueil" class="active">Accueil</a>
+      <a onclick="showPage('news')" id="nav-news">News</a>
+      <a onclick="showPage('sorties')" id="nav-sorties">Sorties</a>
+      <a onclick="showPage('reviews')" id="nav-reviews">Reviews</a>
+      <a onclick="showPage('tops')" id="nav-tops">Tops</a>
+      <a onclick="showPage('manga')" id="nav-manga">Manga</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="search-wrap"><input class="search-box" type="text" placeholder="🔍  Rechercher..."></div>
+
+    </div>
+  </div>
+</nav>
+
+<!-- ======================== PAGE : ACCUEIL ======================== -->
+<div class="page-view active" id="page-accueil">
+
+  <div class="ad-banner">
+    <!-- AdSense Leaderboard 728×90 — remplace data-ad-slot par ton vrai slot ID -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px;max-width:100%"
+         data-ad-client="ca-pub-2742017500165229"
+         data-ad-slot="1111111111"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-main" onclick="openArticle('onepiece')">
+      <div class="hero-bg">⚔️</div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-badge">À la une</div>
+        <div class="hero-title">One Piece : L'arc Elbaf officiel — tout ce qu'on sait sur la saga des géants</div>
+        <div class="hero-meta"><span>📅 5 avril 2026</span><span>✍️ AkuAnime</span><span>👁 12 400 vues</span></div>
+      </div>
+    </div>
+    <div class="hero-aside">
+      <div class="aside-card" onclick="openArticle('demonslayer')"><div class="aside-thumb">🔥</div><div class="aside-body"><div class="aside-tag">Shonen</div><div class="aside-title">Demon Slayer : Un nouveau film pour décembre 2026</div><div class="aside-date">5 avril 2026</div></div></div>
+      <div class="aside-card" onclick="openArticle('mha')"><div class="aside-thumb">⚡</div><div class="aside-body"><div class="aside-tag">Saison</div><div class="aside-title">My Hero Academia saison finale : date confirmée par Bones</div><div class="aside-date">4 avril 2026</div></div></div>
+      <div class="aside-card" onclick="openArticle('printemps')"><div class="aside-thumb">🌸</div><div class="aside-body"><div class="aside-tag">Printemps 2026</div><div class="aside-title">Les 10 animes les plus attendus du printemps 2026</div><div class="aside-date">3 avril 2026</div></div></div>
+      <div class="aside-card" onclick="openArticle('jjk')"><div class="aside-thumb">📖</div><div class="aside-body"><div class="aside-tag">Manga</div><div class="aside-title">Jujutsu Kaisen chapitre 300 : résumé et analyse</div><div class="aside-date">3 avril 2026</div></div></div>
+    </div>
+  </div>
+
+  <div class="main-layout">
+    <div>
+      <div class="sec-head"><div class="sec-title">Dernières news</div><div class="sec-line"></div><span class="sec-more" onclick="showPage('news')">Tout voir →</span></div>
+      <div class="grid3">
+        <div class="art-card fade" onclick="openArticle('bleach')"><div class="art-thumb t1">⚔️</div><div class="art-body"><div class="art-tag">Shonen</div><div class="art-title">Bleach : Thousand-Year Blood War — Partie 4 pour l'été 2026</div><div class="art-excerpt">Studio Pierrot a confirmé lors du Jump Festa la quatrième et dernière partie de l'arc final de Bleach. L'adaptation couvrira le duel final entre Ichigo et Yhwach, avec une animation encore plus soignée.</div><div class="art-meta"><span>5 avr. 2026</span><span>8 min</span></div></div></div>
+        <div class="art-card fade" onclick="openArticle('vinland')"><div class="art-thumb t2">🌿</div><div class="art-body"><div class="art-tag">Seinen</div><div class="art-title">Vinland Saga saison 3 : MAPPA confirme la production</div><div class="art-excerpt">MAPPA a officiellement annoncé la saison 3 de Vinland Saga. Elle adaptera l'arc Guerre de l'Est, où Thorfinn voit son rêve pacifiste menacé par de nouveaux conflits armés.</div><div class="art-meta"><span>4 avr. 2026</span><span>5 min</span></div></div></div>
+        <div class="art-card fade" onclick="openArticle('evangelion')"><div class="art-thumb t3">🤖</div><div class="art-body"><div class="art-tag">Sci-Fi</div><div class="art-title">Neon Genesis Evangelion : remake 4K restauré sur Netflix</div><div class="art-excerpt">Netflix et Gainax s'associent pour une restauration 4K HDR complète de la série de 1995. Trois ans de travail avec Hideaki Anno, et une nouvelle piste Dolby Atmos avec le casting original.</div><div class="art-meta"><span>4 avr. 2026</span><span>6 min</span></div></div></div>
+        <div class="art-card fade" onclick="openArticle('haikyuu')"><div class="art-thumb t4">🏆</div><div class="art-body"><div class="art-tag">Sport</div><div class="art-title">Haikyuu!! : le film Partie 2 dépasse les 10 milliards de yens</div><div class="art-excerpt">En cinq semaines d'exploitation au Japon, le film Haikyuu!! La Bataille des Poubelles franchit les 10 milliards de yens et affiche complet dans 30 pays.</div><div class="art-meta"><span>3 avr. 2026</span><span>4 min</span></div></div></div>
+        <div class="art-card fade" onclick="openArticle('dungeon2')"><div class="art-thumb t5">🎭</div><div class="art-body"><div class="art-tag">Review</div><div class="art-title">Dungeon Meshi saison 2 : notre avis sur les 12 premiers épisodes</div><div class="art-excerpt">Trigger signe une deuxième saison à la hauteur de la première. L'animation reste impeccable, la tension narrative monte crescendo vers une conclusion qui s'annonce épique.</div><div class="art-meta"><span>3 avr. 2026</span><span>10 min</span></div></div></div>
+        <div class="art-card fade" onclick="openArticle('rezero')"><div class="art-thumb t6">✨</div><div class="art-body"><div class="art-tag">Isekai</div><div class="art-title">Re:Zero saison 4 — bande-annonce et date de sortie officielles</div><div class="art-excerpt">White Fox fixe la saison 4 de Re:Zero au 3 octobre 2026. Subaru affronte une nouvelle boucle d'une ampleur inédite dans l'arc Pleiades, très attendu des fans de la light novel.</div><div class="art-meta"><span>2 avr. 2026</span><span>5 min</span></div></div></div>
+      </div>
+
+      <!-- AdSense In-Article — remplace data-ad-slot par ton vrai slot ID -->
+      <div class="ad-mid">
+        <ins class="adsbygoogle"
+             style="display:block;text-align:center"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-2742017500165229"
+             data-ad-slot="3333333333"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <div class="sec-head"><div class="sec-title">Top animes du moment</div><div class="sec-line"></div><span class="sec-more" onclick="showPage('tops')">Voir le classement →</span></div>
+      <div class="top-list">
+        <div class="top-item" onclick="openArticle('onepiece')"><div class="top-num">01</div><div class="top-ico">⚔️</div><div><div class="top-name">One Piece</div><div class="top-sub">Toei Animation · En cours · Arc Elbaf</div></div></div>
+        <div class="top-item" onclick="openArticle('demonslayer')"><div class="top-num">02</div><div class="top-ico">🔥</div><div><div class="top-name">Demon Slayer</div><div class="top-sub">ufotable · Saison 4 · 12 épisodes</div></div></div>
+        <div class="top-item" onclick="openArticle('jjk')"><div class="top-num">03</div><div class="top-ico">💥</div><div><div class="top-name">Jujutsu Kaisen</div><div class="top-sub">MAPPA · Saison 3 · En cours</div></div></div>
+        <div class="top-item" onclick="openArticle('vinland')"><div class="top-num">04</div><div class="top-ico">🌿</div><div><div class="top-name">Vinland Saga</div><div class="top-sub">MAPPA · Saison 3 · Annoncée</div></div></div>
+        <div class="top-item" onclick="openArticle('dungeon2')"><div class="top-num">05</div><div class="top-ico">🍳</div><div><div class="top-name">Dungeon Meshi</div><div class="top-sub">Trigger · Saison 2 · En cours</div></div></div>
+        <div class="top-item" onclick="openArticle('mha')"><div class="top-num">06</div><div class="top-ico">⚡</div><div><div class="top-name">My Hero Academia</div><div class="top-sub">Bones · Saison finale · À venir</div></div></div>
+        <div class="top-item" onclick="openArticle('rezero')"><div class="top-num">07</div><div class="top-ico">🎭</div><div><div class="top-name">Re:Zero</div><div class="top-sub">White Fox · Saison 4 · Oct. 2026</div></div></div>
+      </div>
+
+      <div class="newsletter">
+        <div class="nl-title">Ne rate aucune news anime 🔔</div>
+        <div class="nl-desc">Reçois les dernières actus directement dans ta boîte mail.<br>Gratuit, sans spam, désabonnement en 1 clic.</div>
+        <div class="nl-form"><input class="nl-input" type="email" placeholder="ton@email.com"><button class="nl-btn">S'abonner</button></div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div>
+      <div class="sidebar-widget"><div class="widget-head">À ne pas manquer</div><div class="widget-body"><div class="sidebar-list">
+        <div class="sidebar-item" onclick="openArticle('sololeveling')"><div class="sidebar-ico">🗡️</div><div><div class="sidebar-title">Solo Leveling saison 2 — tout ce qu'on sait</div><div class="sidebar-date">5 avr. 2026</div></div></div>
+        <div class="sidebar-item" onclick="openArticle('naruto')"><div class="sidebar-ico">🌊</div><div><div class="sidebar-title">Naruto : nouveau projet animé annoncé pour 2027</div><div class="sidebar-date">4 avr. 2026</div></div></div>
+        <div class="sidebar-item" onclick="openArticle('dragonball')"><div class="sidebar-ico">⚡</div><div><div class="sidebar-title">Dragon Ball Daima : bilan de la saison 1</div><div class="sidebar-date">4 avr. 2026</div></div></div>
+        <div class="sidebar-item" onclick="openArticle('spyfamily')"><div class="sidebar-ico">🎌</div><div><div class="sidebar-title">Spy x Family : la saison 3 confirmée par WIT Studio</div><div class="sidebar-date">3 avr. 2026</div></div></div>
+        <div class="sidebar-item" onclick="openArticle('mushoku')"><div class="sidebar-ico">🔮</div><div><div class="sidebar-title">Mushoku Tensei saison 3 — en production</div><div class="sidebar-date">2 avr. 2026</div></div></div>
+      </div></div></div>
+      <div class="sidebar-widget"><div class="widget-head">Catégories</div><div class="widget-body"><div class="tags-cloud">
+        <span class="tag" onclick="showPage('news')">Shonen</span>
+        <span class="tag" onclick="showPage('news')">Seinen</span>
+        <span class="tag" onclick="showPage('sorties')">Isekai</span>
+        <span class="tag" onclick="showPage('sorties')">Romance</span>
+        <span class="tag" onclick="showPage('news')">Action</span>
+        <span class="tag" onclick="showPage('manga')">Manga</span>
+        <span class="tag" onclick="showPage('sorties')">Film</span>
+        <span class="tag" onclick="showPage('reviews')">Review</span>
+        <span class="tag" onclick="showPage('tops')">Top 10</span>
+        <span class="tag" onclick="showPage('sorties')">Saison</span>
+        <span class="tag" onclick="showPage('news')">Netflix</span>
+        <span class="tag" onclick="showPage('news')">Crunchyroll</span>
+      </div></div></div>
+      <div class="sidebar-widget"><div class="widget-head">Publicité</div><div class="widget-body" style="padding:8px;display:flex;justify-content:center">
+        <!-- AdSense Rectangle 300×250 — remplace data-ad-slot par ton vrai slot ID -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:300px;height:250px;max-width:100%"
+             data-ad-client="ca-pub-2742017500165229"
+             data-ad-slot="2222222222"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE : CONFIDENTIALITÉ ======================== -->
+<div class="page-view" id="page-confidentialite">
+  <div class="section-page" style="max-width:820px">
+    <h2>Politique de Confidentialité</h2>
+    <p class="sub">Dernière mise à jour : 5 avril 2026</p>
+    <div style="font-size:14px;color:#c8c0e0;line-height:1.9">
+      <h3 style="font-family:'Bebas Neue';font-size:18px;letter-spacing:2px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:28px 0 10px">1. Éditeur du site</h3>
+      <p>Le site AkuAnime (ci-après « le Site ») est édité par AkuAnime. Pour toute question, vous pouvez nous contacter à l'adresse : <strong>contact@akuanime.fr</strong></p>
+
+      <h3 style="font-family:'Bebas Neue';font-size:18px;letter-spacing:2px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:28px 0 10px">2. Données collectées</h3>
+      <p>Dans le cadre de l'utilisation du Site, nous sommes susceptibles de collecter les données suivantes :</p>
+      <ul style="margin:10px 0 10px 20px;display:flex;flex-direction:column;gap:6px">
+        <li>Adresse e-mail (uniquement si vous vous inscrivez à notre newsletter)</li>
+        <li>Données de navigation anonymisées (pages visitées, durée de session, type de navigateur)</li>
+        <li>Données publicitaires collectées par Google AdSense (voir section 5)</li>
+      </ul>
+
+      <h3 style="font-family:'Bebas Neue';font-size:18px;letter-spacing:2px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:28px 0 10px">3. Finalités du traitement</h3>
+      <p>Les données collectées sont utilisées pour :</p>
+      <ul style="margin:10px 0 10px 20px;display:flex;flex-direction:column;gap:6px">
+        <li>L'envoi de la newsletter (si vous y avez consenti)</li>
+        <li>L'amélioration de l'expérience utilisateur</li>
+        <li>L'affichage de publicités personnalisées via Google AdSense</li>
+        <li>L'analyse statistique de la fréquentation du Site</li>
+      </ul>
+
+      <h3 style="font-family:'Bebas Neue';font-size:18px;letter-spacing:2px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:28px 0 10px">4. Base légale</h3>
+      <p>Le traitement de vos données est fondé sur votre consentement (Art. 6.1.a du RGPD) pour la newsletter et les cookies publicitaires, et sur notre intérêt légitime (Art. 6.1.f) pour les statistiques de navigation anonymisées.</p>
+
+      <h3 style="font-family:'Bebas Neue';font-size:18px;letter-spacing:2px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:28px 0 10px">5. Google AdSense et cookies</h3>
+      <p>Le Site utilise Google AdSense, un service publicitaire fourni par Google LLC. Google AdSense utilise des cookies pour afficher des annonces personnalisées basées sur vos visites sur ce site et d'autres sites Internet.</p>
+      <p style="margin-top:10px">Vous pouvez désactiver la personnalisation des annonces en visitant les <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" style="color:var(--accent2)">paramètres des annonces Google</a>. Pour en savoir plus sur la façon dont Google utilise les données, consultez la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--accent2)">politique de confidentialité de Google</a>.</p>
+
+      <h3 style="font-family:'Bebas Neue';font-size:18px;letter-spacing:2px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:28px 0 10px">6. Durée de conservation</h3>
+      <p>Vos données e-mail (newsletter) sont conservées jusqu'à votre désabonnement. Les données de navigation anonymisées sont conservées 13 mois maximum conformément aux recommandations de la CNIL.</p>
+
+      <h3 style="font-family:'Bebas Neue';font-size:18px;letter-spacing:2px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:28px 0 10px">7. Vos droits</h3>
+      <p>Conformément au RGPD, vous disposez des droits suivants concernant vos données personnelles : droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour exercer ces droits, contactez-nous à <strong>contact@akuanime.fr</strong>. Vous avez également le droit d'introduire une réclamation auprès de la <a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color:var(--accent2)">CNIL</a>.</p>
+
+      <h3 style="font-family:'Bebas Neue';font-size:18px;letter-spacing:2px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:28px 0 10px">8. Modifications</h3>
+      <p>Nous nous réservons le droit de modifier cette politique à tout moment. Les modifications prennent effet dès leur publication sur cette page. Nous vous encourageons à la consulter régulièrement.</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="page-view" id="page-news">
+  <div class="section-page">
+    <h2>Toutes les News</h2>
+    <p class="sub">Dernières actualités anime, manga et sorties — mis à jour quotidiennement</p>
+    <div class="grid4">
+      <div class="art-card" onclick="openArticle('bleach')"><div class="art-thumb t1">⚔️</div><div class="art-body"><div class="art-tag">Shonen</div><div class="art-title">Bleach : TYBW Partie 4 confirmée pour l'été 2026</div><div class="art-meta"><span>5 avr.</span><span>8 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('vinland')"><div class="art-thumb t2">🌿</div><div class="art-body"><div class="art-tag">Seinen</div><div class="art-title">Vinland Saga saison 3 : MAPPA officialise</div><div class="art-meta"><span>4 avr.</span><span>5 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('evangelion')"><div class="art-thumb t3">🤖</div><div class="art-body"><div class="art-tag">Sci-Fi</div><div class="art-title">Evangelion 4K restauré annoncé sur Netflix</div><div class="art-meta"><span>4 avr.</span><span>6 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('haikyuu')"><div class="art-thumb t4">🏆</div><div class="art-body"><div class="art-tag">Sport</div><div class="art-title">Haikyuu!! film : 10 milliards de yens au box-office</div><div class="art-meta"><span>3 avr.</span><span>4 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('sololeveling')"><div class="art-thumb t5">🗡️</div><div class="art-body"><div class="art-tag">Action</div><div class="art-title">Solo Leveling saison 2 — date officielle janvier 2027</div><div class="art-meta"><span>5 avr.</span><span>7 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('naruto')"><div class="art-thumb t6">🌊</div><div class="art-body"><div class="art-tag">Shonen</div><div class="art-title">Naruto : nouveau projet animé centré sur Minato</div><div class="art-meta"><span>4 avr.</span><span>5 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('dragonball')"><div class="art-thumb t1">⚡</div><div class="art-body"><div class="art-tag">Action</div><div class="art-title">Dragon Ball Daima : bilan saison 1 et annonce saison 2</div><div class="art-meta"><span>4 avr.</span><span>6 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('spyfamily')"><div class="art-thumb t2">🎌</div><div class="art-body"><div class="art-tag">Comédie</div><div class="art-title">Spy x Family saison 3 confirmée par WIT Studio</div><div class="art-meta"><span>3 avr.</span><span>4 min</span></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE : SORTIES ======================== -->
+<div class="page-view" id="page-sorties">
+  <div class="section-page">
+    <h2>Sorties &amp; Calendrier</h2>
+    <p class="sub">Toutes les dates de sortie des animes et films à venir en 2026</p>
+    <div class="grid4">
+      <div class="art-card" onclick="openArticle('rezero')"><div class="art-thumb t1">✨</div><div class="art-body"><div class="art-tag">Isekai · Oct. 2026</div><div class="art-title">Re:Zero saison 4 — 3 octobre 2026</div><div class="art-meta"><span>2 avr.</span><span>5 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('demonslayer')"><div class="art-thumb t2">🔥</div><div class="art-body"><div class="art-tag">Shonen · Déc. 2026</div><div class="art-title">Demon Slayer film — décembre 2026</div><div class="art-meta"><span>5 avr.</span><span>4 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('mha')"><div class="art-thumb t3">⚡</div><div class="art-body"><div class="art-tag">Shonen · Oct. 2026</div><div class="art-title">My Hero Academia saison finale — octobre 2026</div><div class="art-meta"><span>4 avr.</span><span>5 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('sololeveling')"><div class="art-thumb t4">🗡️</div><div class="art-body"><div class="art-tag">Action · Jan. 2027</div><div class="art-title">Solo Leveling saison 2 — janvier 2027</div><div class="art-meta"><span>5 avr.</span><span>7 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('mushoku')"><div class="art-thumb t5">🔮</div><div class="art-body"><div class="art-tag">Isekai · 2026</div><div class="art-title">Mushoku Tensei saison 3 — en production</div><div class="art-meta"><span>31 mar.</span><span>6 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('printemps')"><div class="art-thumb t6">🌸</div><div class="art-body"><div class="art-tag">Saisonnier</div><div class="art-title">Top 10 animes du printemps 2026</div><div class="art-meta"><span>3 avr.</span><span>9 min</span></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE : REVIEWS ======================== -->
+<div class="page-view" id="page-reviews">
+  <div class="section-page">
+    <h2>Reviews &amp; Critiques</h2>
+    <p class="sub">Nos avis complets et honnêtes sur les animes en cours et récents</p>
+    <div class="grid4">
+      <div class="art-card" onclick="openArticle('frieren')"><div class="art-thumb t1">⭐</div><div class="art-body"><div class="art-tag">Review — 9/10</div><div class="art-title">Frieren : chef-d'œuvre de la décennie</div><div class="art-meta"><span>1 avr.</span><span>12 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('dungeon1')"><div class="art-thumb t2">⭐</div><div class="art-body"><div class="art-tag">Review — 8/10</div><div class="art-title">Dungeon Meshi saison 1 : une recette parfaite</div><div class="art-meta"><span>30 mar.</span><span>9 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('bluelock')"><div class="art-thumb t3">⭐</div><div class="art-body"><div class="art-tag">Review — 7/10</div><div class="art-title">Blue Lock saison 2 : intense mais inégal</div><div class="art-meta"><span>28 mar.</span><span>8 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('dungeon2')"><div class="art-thumb t4">⭐</div><div class="art-body"><div class="art-tag">Review — 9/10</div><div class="art-title">Dungeon Meshi saison 2 : avis complet</div><div class="art-meta"><span>3 avr.</span><span>10 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('shangrila')"><div class="art-thumb t5">⭐</div><div class="art-body"><div class="art-tag">Review — 8/10</div><div class="art-title">Shangri-La Frontier saison 2 : gaming au top</div><div class="art-meta"><span>30 mar.</span><span>5 min</span></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE : TOPS ======================== -->
+<div class="page-view" id="page-tops">
+  <div class="section-page">
+    <h2>Top Listes</h2>
+    <p class="sub">Nos classements des meilleurs animes, mangas et moments marquants</p>
+    <div class="grid4">
+      <div class="art-card" onclick="openArticle('top2026')"><div class="art-thumb t1">🏆</div><div class="art-body"><div class="art-tag">Top</div><div class="art-title">Top 10 meilleurs animes de 2026 jusqu'ici</div><div class="art-meta"><span>5 avr.</span><span>10 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('topisekai')"><div class="art-thumb t2">🌀</div><div class="art-body"><div class="art-tag">Top</div><div class="art-title">Top 10 isekai de tous les temps selon les fans</div><div class="art-meta"><span>2 avr.</span><span>8 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('topmappa')"><div class="art-thumb t3">🎬</div><div class="art-body"><div class="art-tag">Top</div><div class="art-title">Tous les animes MAPPA classés du pire au meilleur</div><div class="art-meta"><span>1 avr.</span><span>12 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('printemps')"><div class="art-thumb t4">🌸</div><div class="art-body"><div class="art-tag">Top</div><div class="art-title">Les 10 animes du printemps 2026 à ne pas rater</div><div class="art-meta"><span>3 avr.</span><span>9 min</span></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE : MANGA ======================== -->
+<div class="page-view" id="page-manga">
+  <div class="section-page">
+    <h2>Actu Manga</h2>
+    <p class="sub">Sorties, chapitres, analyses et news du monde du manga</p>
+    <div class="grid4">
+      <div class="art-card" onclick="openArticle('jjk')"><div class="art-thumb t1">📖</div><div class="art-body"><div class="art-tag">JJK ch.300</div><div class="art-title">Jujutsu Kaisen ch.300 : les révélations qui changent tout</div><div class="art-meta"><span>3 avr.</span><span>6 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('chainsawman')"><div class="art-thumb t2">🧩</div><div class="art-body"><div class="art-tag">Chainsaw Man</div><div class="art-title">Chainsaw Man Part 2 : fin prévue pour 2027</div><div class="art-meta"><span>2 avr.</span><span>5 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('opzoro')"><div class="art-thumb t3">🌊</div><div class="art-body"><div class="art-tag">One Piece</div><div class="art-title">Oda révèle un indice cryptique sur le futur de Zoro</div><div class="art-meta"><span>1 avr.</span><span>7 min</span></div></div></div>
+      <div class="art-card" onclick="openArticle('bluelock')"><div class="art-thumb t4">⚽</div><div class="art-body"><div class="art-tag">Blue Lock</div><div class="art-title">Blue Lock : l'arc Neo Egoist League en cours d'adaptation</div><div class="art-meta"><span>29 mar.</span><span>4 min</span></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div><div class="f-logo"><em>Aku</em>Anime</div><div class="f-desc">Le site de référence pour l'actualité anime et manga en français. News, reviews, tops et sorties.</div><div class="f-social"><a href="#">🎵</a><a href="#">📸</a><a href="#">🐦</a><a href="#">▶️</a></div></div>
+      <div class="f-col"><h4>Navigation</h4><a onclick="showPage('accueil')">Accueil</a><a onclick="showPage('news')">News</a><a onclick="showPage('sorties')">Sorties</a><a onclick="showPage('reviews')">Reviews</a><a onclick="showPage('tops')">Tops</a></div>
+      <div class="f-col"><h4>Catégories</h4><a onclick="showPage('news')">Shonen</a><a onclick="showPage('news')">Seinen</a><a onclick="showPage('sorties')">Isekai</a><a onclick="showPage('manga')">Manga</a><a onclick="showPage('sorties')">Film</a></div>
+      <div class="f-col"><h4>À propos</h4><a href="#">Qui sommes-nous</a><a href="#">Contact</a><a href="#">Mentions légales</a><a onclick="showPage('confidentialite')" style="cursor:pointer">Confidentialité</a></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-copy">© 2026 AkuAnime — Tous droits réservés</div></div>
+  </div>
+</footer>
+
+<script>
+// ---- DATA ARTICLES ----
+const articles = {
+  onepiece: {
+    emoji:'⚔️', tag:'Shonen · Arc Elbaf', date:'5 avril 2026', time:'15 min', views:'12 400',
+    title:'One Piece : L\'arc Elbaf officiel — tout ce qu\'on sait sur la saga des géants',
+    content:`<p>Après des années d'attente, Toei Animation a officiellement confirmé l'arc Elbaf pour l'été 2026. Considéré par les fans comme l'un des arcs les plus attendus du manga de Eiichiro Oda, Elbaf est le pays des géants vikings, un lieu évoqué depuis les tout premiers arcs de la série.</p>
+    <h3>Un arc fondateur pour la mythologie One Piece</h3>
+    <p>Elbaf n'est pas un lieu ordinaire dans l'univers de One Piece. Dès l'arc Little Garden, Usopp rêvait de visiter cette terre légendaire, patrie de Dorry et Brogy. L'arc devrait enfin révéler l'histoire complète des géants et leur lien avec les Vinsmoke, le Rocks Pirates et potentiellement Imu lui-même.</p>
+    <h3>Ce qu'on sait côté anime</h3>
+    <p>Toei a promis une qualité visuelle inédite pour cet arc, en s'inspirant des designs nordiques du manga. Des rumeurs évoquent un budget par épisode revu à la hausse, suite aux critiques sur certains épisodes de l'arc Wano. Plusieurs animateurs de renom auraient été recrutés spécialement pour les séquences de combat des géants.</p>
+    <h3>Les enjeux narratifs</h3>
+    <p>L'arc Elbaf devrait faire avancer significativement la quête du One Piece, avec des révélations attendues autour du Ponéglyphe géant et du personnage de Shanks. Pour les fans, c'est peut-être l'arc qui donnera enfin des réponses sur les origines du Fruit du Démon de Luffy et sa connexion au Joy Boy.</p>`
+  },
+  demonslayer: {
+    emoji:'🔥', tag:'Shonen · Film', date:'5 avril 2026', time:'6 min', views:'8 200',
+    title:'Demon Slayer : Un nouveau film pour décembre 2026 — l\'arc du Village des Forgerons',
+    content:`<p>ufotable a officialisé la production d'un nouveau film Demon Slayer prévu pour décembre 2026. Intitulé Demon Slayer : Kimetsu no Yaiba — Village des Forgerons, le film adaptera l'arc éponyme du manga de Koyoharu Gotouge.</p>
+    <h3>L'arc le plus attendu en salles</h3>
+    <p>L'arc du Village des Forgerons est particulièrement apprécié pour ses affrontements exceptionnels, notamment les combats de Tanjiro contre Hantengu et Gyokko, deux des Douze Lunes. ufotable avait déjà adapté cet arc en série télévisée, mais le studio a décidé de proposer une version cinématographique avec une animation entièrement redessinée.</p>
+    <h3>Une animation revue et augmentée</h3>
+    <p>D'après les premières informations du staff, la version film proposera des séquences inédites absentes de l'anime TV, ainsi que des scènes d'entraînement approfondies pour Tanjiro. La technique des effets de feu et d'eau, marque de fabrique du studio, sera poussée à un niveau jamais atteint pour la franchise.</p>`
+  },
+  mha: {
+    emoji:'⚡', tag:'Shonen · Saison finale', date:'4 avril 2026', time:'5 min', views:'6 100',
+    title:'My Hero Academia saison finale : date et synopsis confirmés par Bones',
+    content:`<p>Le studio Bones a officiellement annoncé la date de diffusion de la saison finale de My Hero Academia : le 3 octobre 2026. Cette ultime saison adaptera les derniers chapitres du manga de Kohei Horikoshi, qui s'est achevé en 2024.</p>
+    <h3>La fin d'une ère</h3>
+    <p>My Hero Academia aura marqué une génération de fans de shonen. Depuis son lancement en 2016, la série a accumulé plus de 100 millions de copies du manga vendues dans le monde. La saison finale promet d'adapter le combat ultime entre Izuku Midoriya et Tomura Shigaraki, dans un Japon devasté.</p>
+    <h3>Un synopsis qui promet des émotions</h3>
+    <p>Bones a partagé un synopsis officiel indiquant que cette saison explorera en profondeur les origines des Quirks et la connexion entre One For All et All For One à travers les générations. Le character designer Yoshihiko Umakoshi a promis que "chaque épisode aura le niveau d'un épisode final".</p>`
+  },
+  jjk: {
+    emoji:'💥', tag:'Manga · Shonen Jump', date:'3 avril 2026', time:'8 min', views:'9 500',
+    title:'Jujutsu Kaisen chapitre 300 : les révélations qui changent tout à l\'univers',
+    content:`<p>Le chapitre 300 de Jujutsu Kaisen a fait l'effet d'une bombe dans la communauté. Gege Akutami livre un flashback monumental qui recontextualise l'ensemble de la série depuis ses débuts.</p>
+    <h3>Les origines du Roi des Malédictions enfin dévoilées</h3>
+    <p>Sans rentrer dans les détails pour les non-lecteurs, le chapitre 300 révèle que Ryomen Sukuna n'était pas simplement un sorcier devenu malédiction. Ses origines remontent à une époque bien antérieure à l'ère Heian, avec un lien direct vers la naissance même des techniques maudites au Japon.</p>
+    <h3>Des implications pour toute la série</h3>
+    <p>Cette révélation recontextualise plusieurs moments-clés, notamment la réaction de Sukuna face aux techniques de Gojo et sa fascination pour Yuji Itadori. La communauté en ligne a explosé de théories, certains fans ayant repéré des indices cachés dans des chapitres datant de plus de 200 numéros en arrière.</p>
+    <h3>Un dessin au sommet</h3>
+    <p>Techniquement, le chapitre s'impose comme l'un des plus aboutis de Gege Akutami. Les doubles pages du flashback, avec un style de trait volontairement archaïque pour évoquer l'époque ancienne, témoignent d'une maîtrise artistique remarquable.</p>`
+  },
+  bleach: {
+    emoji:'⚔️', tag:'Shonen · Bleach', date:'5 avril 2026', time:'8 min', views:'7 300',
+    title:'Bleach : Thousand-Year Blood War — La Partie 4 officielle pour l\'été 2026',
+    content:`<p>Studio Pierrot a confirmé lors du Jump Festa que la quatrième et dernière partie de l'arc final de Bleach sera diffusée à partir de juillet 2026. Cette conclusion tant attendue mettra fin à l'une des adaptations les plus applaudies de ces dernières années.</p>
+    <h3>Le duel ultime : Ichigo vs Yhwach</h3>
+    <p>La Partie 4 couvrira les chapitres 672 à 686 du manga de Tite Kubo, soit la résolution complète du conflit contre les Quincy. Le combat entre Ichigo Kurosaki et Yhwach Almighty promet d'être l'une des séquences d'animation les plus spectaculaires de l'histoire du studio.</p>
+    <h3>Kubo impliqué dans la production</h3>
+    <p>Tite Kubo, impliqué depuis la Partie 1 dans la supervision artistique, a confirmé qu'il a fourni des designs additionnels et des informations inédites pour cette dernière partie, notamment pour les scènes qui dépassaient les limites du noir et blanc du manga original.</p>`
+  },
+  vinland: {
+    emoji:'🌿', tag:'Seinen · MAPPA', date:'4 avril 2026', time:'5 min', views:'4 800',
+    title:'Vinland Saga saison 3 : MAPPA confirme la production avec un premier teaser',
+    content:`<p>MAPPA a officiellement annoncé la mise en production de la saison 3 de Vinland Saga. La confirmation était attendue depuis la fin de la saison 2, saluée comme l'une des meilleures adaptations manga de ces dernières années.</p>
+    <h3>L'arc Guerre de l'Est</h3>
+    <p>La saison 3 adaptera l'arc Guerre de l'Est du manga de Makoto Yukimura, où Thorfinn, désormais établi au Vinland avec une communauté pacifique, voit son rêve menacé par l'arrivée de guerriers en quête de conflits. C'est un arc qui met à l'épreuve toutes les convictions forgées au cours des deux premières saisons.</p>
+    <h3>Une évolution artistique annoncée</h3>
+    <p>Le character designer Takahiko Abiru a confirmé que les personnages auront une apparence sensiblement plus âgée et marquée, reflétant les années écoulées depuis la saison 2. Les environnements du Nouveau Monde, encore jamais animés, représentent un défi artistique que MAPPA semble prendre très au sérieux.</p>`
+  },
+  evangelion: {
+    emoji:'🤖', tag:'Sci-Fi · Netflix', date:'4 avril 2026', time:'6 min', views:'5 600',
+    title:'Neon Genesis Evangelion : un remake 4K restauré annoncé sur Netflix',
+    content:`<p>Netflix et Studio Khara ont signé un partenariat inédit pour proposer une restauration 4K HDR complète de la série originale Neon Genesis Evangelion de 1995, ainsi que des deux films End of Evangelion et The End of Evangelion.</p>
+    <h3>Trois ans de travail de restauration</h3>
+    <p>Le projet de restauration a nécessité trois années de travail intensif, conduit en collaboration directe avec Hideaki Anno et son équipe chez Khara. Chaque image des 26 épisodes a été retravaillée manuellement pour respecter l'intention originale tout en tirant parti des capacités actuelles de l'affichage 4K.</p>
+    <h3>Une nouvelle piste audio Dolby Atmos</h3>
+    <p>Pour la première fois, une piste audio Dolby Atmos a été enregistrée pour la série, avec une partie du casting original japonais qui a accepté de re-enregistrer certaines scènes emblématiques. La bande originale de Shiro Sagisu a également bénéficié d'un nouveau mixage orchestral supervisé par le compositeur lui-même.</p>`
+  },
+  haikyuu: {
+    emoji:'🏆', tag:'Sport · Film', date:'3 avril 2026', time:'4 min', views:'5 100',
+    title:'Haikyuu!! : le film Partie 2 dépasse les 10 milliards de yens au box-office',
+    content:`<p>La deuxième partie du film Haikyuu!! La Bataille des Poubelles continue d'établir des records. En cinq semaines d'exploitation au Japon, elle franchit le cap des 10 milliards de yens de recettes cumulées, s'imposant comme l'un des plus grands succès de l'histoire de Production I.G.</p>
+    <h3>Un phénomène mondial</h3>
+    <p>À l'international, les projections en salles affichent complet dans plus de 30 pays, dont la France, les États-Unis, le Brésil et la Corée du Sud. Le film a déclenché un véritable retour d'intérêt pour le manga original et l'anime TV, dont les streams ont bondi de 340% depuis la sortie du film.</p>
+    <h3>La fin d'une époque</h3>
+    <p>Pour les fans, ce film marquait la conclusion d'une série qui les a accompagnés pendant plus de dix ans. La scène finale de la Partie 2 est déjà décrite sur les réseaux sociaux comme "l'une des plus belles scènes de sport jamais animées", sans spoiler ce qui se passe exactement.</p>`
+  },
+  dungeon2: {
+    emoji:'🎭', tag:'Fantasy · Review', date:'3 avril 2026', time:'10 min', views:'6 900',
+    title:'Dungeon Meshi saison 2 : notre avis complet sur les 12 premiers épisodes',
+    content:`<p>Trigger continue sur sa lancée avec une saison 2 de Dungeon Meshi qui enrichit et approfondit tout ce qui faisait le charme de la première : la mythologie du donjon, les relations entre personnages, et bien sûr, la cuisine de l'impossible.</p>
+    <h3>Une narration plus mature et tendue</h3>
+    <p>La saison 2 marque un tournant dans le ton de la série. Si la saison 1 misait sur l'humour et l'émerveillement culinaire, cette nouvelle fournée d'épisodes installe une tension croissante autour du démon du donjon et des véritables motivations de Laios. Les scènes légères cohabitent avec des moments de gravité sincère, ce qui renforce l'attachement aux personnages.</p>
+    <h3>Des personnages qui grandissent</h3>
+    <p>Marcille, Senshi et Chilchuck bénéficient chacun de développements bienvnus. La relation entre Laios et Falin, au cœur de l'intrigue, évolue dans une direction poignante que le manga avait su rendre déchirante — Trigger l'adapte avec une sensibilité remarquable.</p>
+    <h3>Notre verdict</h3>
+    <p>Dungeon Meshi saison 2 confirme que Trigger a pleinement compris l'essence du manga de Ryoko Kui. C'est une adaptation ambitieuse, émotionnellement forte, et visuellement inventive. Note : 9/10.</p>`
+  },
+  rezero: {
+    emoji:'✨', tag:'Isekai · White Fox', date:'2 avril 2026', time:'5 min', views:'7 700',
+    title:'Re:Zero saison 4 — bande-annonce explosive et date de sortie officielle',
+    content:`<p>White Fox a officialisé la saison 4 de Re:Zero Starting Life in Another World, avec une date de diffusion fixée au 3 octobre 2026 sur Crunchyroll. La bande-annonce de deux minutes dévoilée lors d'un event japonais a immédiatement enflammé les réseaux sociaux.</p>
+    <h3>L'arc Pleiades Watch Tower</h3>
+    <p>La saison 4 adaptera les volumes 20 à 25 de la light novel de Tappei Nagatsuki, incluant l'arc Pleiades Watch Tower, considéré par les fans comme le pic émotionnel de toute la série. Subaru sera confronté à une version de la boucle temporelle d'une ampleur radicalement inédite, mettant en jeu des personnages que les spectateurs de l'anime n'ont jamais rencontrés.</p>
+    <h3>Une direction artistique plus sombre</h3>
+    <p>La bande-annonce suggère une palette visuelle nettement plus froide et désaturée que les saisons précédentes, cohérente avec l'atmosphère oppressante de l'arc. Le compositeur Kenichiro Suehiro, fidèle à la franchise, a confirmé une nouvelle partition "qui explore des territoires sonores jamais touchés dans la série".</p>`
+  },
+  frieren: {
+    emoji:'⭐', tag:'Fantasy · Review 9/10', date:'1 avril 2026', time:'12 min', views:'11 200',
+    title:'Frieren : Beyond Journey\'s End — Le chef-d\'œuvre intemporel de la décennie',
+    content:`<p>Il y a des œuvres qui redéfinissent ce qu'un genre peut exprimer. Frieren : Beyond Journey's End est l'une d'elles. Adapté du manga de Kanehito Yamada et Tsukasa Abe par le studio Madhouse, l'anime nous plonge dans une réflexion sur le temps, la mémoire et ce que signifie vraiment connaître quelqu'un.</p>
+    <h3>Une prémisse qui inverse les codes</h3>
+    <p>Là où la plupart des fantasy commencent à l'aventure, Frieren commence après. Le Roi Démon est mort, la quête est terminée. Mais Frieren, elfe immortelle, réalise qu'elle n'a pas vraiment connu ses compagnons humains, disparus en un clin d'œil à son échelle. Ce renversement de perspective est le moteur de toute la série.</p>
+    <h3>Une animation d'une beauté rare</h3>
+    <p>Madhouse signe ici l'un de ses meilleurs travaux depuis des années. Chaque plan semble composé avec une intention. La direction artistique, entre tons pastels et éclairages mélancoliques, crée une atmosphère unique — mélancolique sans être triste, paisible sans être vide.</p>
+    <h3>Notre verdict</h3>
+    <p>Frieren est une œuvre qui restera. Elle s'adresse à ceux qui ont aimé et perdu, à ceux qui ont du mal à dire au revoir, à tous ceux qui se demandent si les gens qu'ils ont croisés les ont vraiment connus. Note finale : 9/10 — chef-d'œuvre.</p>`
+  },
+  dungeon1: {
+    emoji:'⭐', tag:'Fantasy · Review 8/10', date:'30 mars 2026', time:'9 min', views:'8 400',
+    title:'Dungeon Meshi saison 1 : une recette parfaite entre humour et aventure',
+    content:`<p>Adapter un manga sur la cuisine dans un donjon, ça aurait pu être une curiosité sympathique sans lendemain. Trigger en a fait l'une des meilleures surprises de ces dernières années. Dungeon Meshi saison 1 est une réussite quasi totale.</p>
+    <h3>Un concept impeccablement exécuté</h3>
+    <p>Le pitch est simple : Laios et ses compagnons n'ont plus d'argent pour acheter de la nourriture, alors ils cuisinent les monstres du donjon. Ce qui pourrait être un gimmick répété jusqu'à l'épuisement devient en réalité le prétexte à une exploration fascinante de l'écosystème du donjon et à du world-building d'une richesse remarquable.</p>
+    <h3>Des personnages mémorables</h3>
+    <p>Chaque membre du groupe a une personnalité forte et des motivations cohérentes. Laios, entomologiste passionné de monstres, est un protagoniste atypique dans le genre. Senshi le nain cuisinier est rapidement devenu un personnage culte. Et la dynamique entre Marcille et Laios offre une des meilleures bromances du genre.</p>
+    <h3>Notre verdict</h3>
+    <p>Une saison 1 exemplaire, inventive, drôle et plus profonde qu'il n'y paraît. Note : 8/10.</p>`
+  },
+  bluelock: {
+    emoji:'⭐', tag:'Sport · Review 7/10', date:'28 mars 2026', time:'8 min', views:'5 300',
+    title:'Blue Lock saison 2 : l\'intensité est là, mais le rythme décroche par moments',
+    content:`<p>Blue Lock saison 2 poursuit les aventures d'Isagi Yoichi dans le programme révolutionnaire qui vise à forger le meilleur attaquant du monde. Si la promesse est tenue sur le plan de l'intensité, la saison montre quelques signes d'essoufflement.</p>
+    <h3>Des matchs toujours spectaculaires</h3>
+    <p>Le point fort de la saison reste indéniablement les séquences de match. Le studio 8bit a réussi à rendre lisibles des actions footballistiques ultra-stylisées, en jouant sur la perspective et les ralentis pour mettre en valeur chaque prise de décision d'Isagi. Le duel contre Kaiser, son rival allemand, est un moment fort de la saison.</p>
+    <h3>Un rythme qui parfois s'essouffle</h3>
+    <p>Là où la saison 2 déçoit un peu, c'est dans ses épisodes de transition. Plusieurs épisodes semblent étirés, avec des monologues intérieurs répétitifs qui ralentissent une narration pourtant censée être frénétique. C'est le revers d'un manga qui mise tout sur la progression mentale des joueurs.</p>
+    <h3>Notre verdict</h3>
+    <p>Une saison 2 honnête qui remplit son contrat pour les fans, mais qui peine à atteindre les sommets de tension de la première. Note : 7/10.</p>`
+  },
+  sololeveling: {
+    emoji:'🗡️', tag:'Action · Isekai', date:'5 avril 2026', time:'7 min', views:'9 100',
+    title:'Solo Leveling saison 2 : date officielle, arc adapté et premières images',
+    content:`<p>A-1 Pictures a officialisé la saison 2 de Solo Leveling avec une date de diffusion fixée à janvier 2027. Cette confirmation était attendue après l'immense succès de la saison 1, qui avait propulsé le manhwa coréen au rang des plus grandes franchises d'animation mondiales.</p>
+    <h3>L'arc Monarch</h3>
+    <p>La saison 2 adaptera l'arc Monarch, considéré par les fans comme le tournant le plus sombre et le plus ambitieux de toute la série. Jinwoo Sung découvrira sa véritable nature et sa connexion au Système qui l'a transformé, tout en affrontant les Monarques — des entités cosmiques dont la puissance dépasse tout ce qu'il a rencontré jusqu'ici.</p>
+    <h3>Une direction artistique encore plus sombre</h3>
+    <p>Les premières images officielles montrent une palette visuelle dominée par le bleu nuit et le violet, en rupture avec les teintes plus contrastées de la saison 1. Cette évolution reflète la montée en puissance narrative et l'atmosphère plus oppressante de cet arc.</p>`
+  },
+  naruto: {
+    emoji:'🌊', tag:'Shonen · Annonce', date:'4 avril 2026', time:'5 min', views:'10 300',
+    title:'Naruto : nouveau projet animé centré sur Minato Namikaze annoncé pour 2027',
+    content:`<p>Studio Pierrot a créé la surprise lors du Naruto 25th Anniversary Event en annonçant un nouveau projet animé centré sur Minato Namikaze, le Quatrième Hokage, prévu pour 2027.</p>
+    <h3>Un personnage longtemps réclamé</h3>
+    <p>Minato est depuis des années le personnage le plus demandé par les fans pour un spinoff. Son histoire — ascension vers le rang de Hokage, relation avec Kushina, sacrifice lors de l'attaque du Kyubi — n'a été montrée que partiellement dans la série principale et dans quelques films.</p>
+    <h3>Un format encore non précisé</h3>
+    <p>Le studio n'a pas encore précisé s'il s'agira d'une série TV, d'une mini-série ou d'un film. Masashi Kishimoto a confirmé être impliqué dans la supervision du projet, en fournissant des éléments de lore inédits sur la jeunesse de Minato et ses années comme élève de Jiraiya.</p>`
+  },
+  dragonball: {
+    emoji:'⚡', tag:'Shonen · Dragon Ball', date:'4 avril 2026', time:'6 min', views:'7 800',
+    title:'Dragon Ball Daima : bilan complet de la saison 1 et annonce de la saison 2',
+    content:`<p>Dragon Ball Daima vient de conclure sa première saison avec un final qui a réjoui les fans. Akira Toriyama, dont c'était le dernier grand projet avant sa disparition en 2024, avait supervisé l'intégralité du concept. Le bilan est globalement positif.</p>
+    <h3>Un retour aux sources réussi</h3>
+    <p>Daima a eu le mérite de retrouver un ton plus léger et aventureux que Dragon Ball Super, rappelant l'esprit du Dragon Ball original. Voir Goku enfant traverser le Monde des Démons avec une équipe de personnages inédits a offert un vent de fraîcheur apprécié.</p>
+    <h3>La saison 2 confirmée</h3>
+    <p>Toei Animation a officiellement annoncé une saison 2 de Daima, en précisant que le contenu proviendra de notes et d'esquisses laissées par Toriyama. C'est une façon de prolonger sa vision tout en honorant sa mémoire. La saison 2 est attendue pour l'automne 2026.</p>`
+  },
+  spyfamily: {
+    emoji:'🎌', tag:'Comédie · WIT Studio', date:'3 avril 2026', time:'4 min', views:'5 500',
+    title:'Spy x Family : la saison 3 officiellement confirmée par WIT Studio',
+    content:`<p>WIT Studio et CloverWorks ont confirmé conjointement la production d'une saison 3 de Spy x Family. La série adaptant le manga de Tatsuya Endo continue sur sa lancée commerciale et critique.</p>
+    <h3>Ce que la saison 3 devrait couvrir</h3>
+    <p>D'après les informations disponibles, la saison 3 adaptera plusieurs arcs du manga publiés entre 2022 et 2024, notamment des missions de Loid Forger qui approfondissent son passé d'espion et révèlent davantage sur l'organisation WISE. Anya devrait également être au centre d'un arc centré sur un concours scolaire particulièrement disputé.</p>
+    <h3>Une franchise au sommet</h3>
+    <p>Spy x Family reste l'une des franchises manga/anime les plus vendues de ces dernières années, avec plus de 35 millions de volumes du manga écoulés dans le monde. La série a réussi l'exploit de plaire simultanément aux amateurs de comédie familiale et aux fans d'action/espionnage.</p>`
+  },
+  mushoku: {
+    emoji:'🔮', tag:'Isekai · Studio Bind', date:'31 mars 2026', time:'6 min', views:'4 900',
+    title:'Mushoku Tensei saison 3 : que faut-il attendre de l\'arc Labyrinthe Central ?',
+    content:`<p>Studio Bind prépare activement la saison 3 de Mushoku Tensei : Jobless Reincarnation, qui adaptera l'arc du Labyrinthe Central — considéré par les lecteurs de la light novel comme le point culminant émotionnel de toute la série.</p>
+    <h3>L'arc le plus intense de la série</h3>
+    <p>Dans le Labyrinthe Central, Rudy devra affronter ses propres démons dans un donjon dont les règles physiques et magiques défient toute logique connue. L'arc est réputé pour son intensité émotionnelle, ses pertes significatives et ses révélations sur les origines des téléportations qui ont dispersé la famille Greyrat.</p>
+    <h3>Des designs inédits</h3>
+    <p>Le staff artistique a teasé des designs de créatures du Labyrinthe Central "qui dépassent tout ce qu'on a fait dans les saisons précédentes", avec des influences visuelles qui s'éloignent de la fantasy occidentale classique pour aller vers quelque chose de plus surréaliste et inquiétant.</p>`
+  },
+  printemps: {
+    emoji:'🌸', tag:'Top · Saison Printemps 2026', date:'3 avril 2026', time:'9 min', views:'8 800',
+    title:'Top 10 animes du printemps 2026 : notre sélection complète',
+    content:`<p>La saison Printemps 2026 s'annonce chargée. Entre les suites très attendues et les nouvelles adaptations prometteuses, voici notre sélection des 10 animes à ne pas rater.</p>
+    <h3>1. Re:Zero saison 4</h3><p>L'arc Pleiades enfin adapté. Incontournable pour les fans de la série.</p>
+    <h3>2. Dungeon Meshi saison 2 (suite)</h3><p>Trigger continue sa magie. Les épisodes les plus attendus de la saison.</p>
+    <h3>3. Bleach TYBW Partie 4</h3><p>La conclusion ultime. L'animation de Studio Pierrot sera-t-elle à la hauteur ?</p>
+    <h3>4. Blue Lock saison 2 (deuxième partie)</h3><p>L'arc Neo Egoist League s'intensifie avec des matchs encore plus fous.</p>
+    <h3>5. Shangri-La Frontier saison 2</h3><p>C2C confirme que le gaming isekai peut être fait avec sérieux.</p>
+    <h3>6-10</h3><p>Whisper Me a Love Song (romance yuri très attendue), The Apothecary Diaries Partie 2, Wind Breaker saison 2, Kaiju No. 8 saison 2, et une nouvelle adaptation surprise dont nous ne pouvons pas encore révéler le nom.</p>`
+  },
+  chainsawman: {
+    emoji:'🧩', tag:'Manga · Seinen', date:'2 avril 2026', time:'5 min', views:'6 200',
+    title:'Chainsaw Man Part 2 : Fujimoto confirme une fin programmée pour 2027',
+    content:`<p>Dans une rare interview accordée à Weekly Shonen Jump, Tatsuki Fujimoto a déclaré avoir un plan précis pour conclure Chainsaw Man Part 2 d'ici fin 2027, soit environ 18 mois de publication supplémentaires.</p>
+    <h3>Une fin qui "brisera les lecteurs"</h3>
+    <p>Fujimoto a utilisé ses mots avec soin : il promet un dénouement qui "brisera les lecteurs dans le bon sens du terme". Il a ajouté que la conclusion de la Part 2 sera intimement liée aux thèmes de la Part 1, formant un tout cohérent qui donnera tout son sens à l'ensemble de l'œuvre.</p>
+    <h3>La Devil de la Mort au centre</h3>
+    <p>Les indices narratifs accumulés dans les derniers chapitres pointent vers un affrontement final impliquant la Devil de la Mort et une révélation sur la véritable nature du pouvoir de Denji. Certains théoriciens estiment que l'identité de Nayuta jouera un rôle central dans la conclusion.</p>`
+  },
+  opzoro: {
+    emoji:'🌊', tag:'One Piece · Manga', date:'1 avril 2026', time:'7 min', views:'8 900',
+    title:'One Piece : Oda révèle un indice cryptique sur l\'avenir de Zoro dans le SBS',
+    content:`<p>Chaque SBS d'Eiichiro Oda est une mine d'or pour les fans. Celui publié dans le dernier volume de One Piece ne fait pas exception, avec un indice cryptique sur l'avenir de Roronoa Zoro qui a mis la communauté en effervescence.</p>
+    <h3>L'indice en question</h3>
+    <p>Sans citer textuellement les propos d'Oda, le dessinateur a suggéré que la connexion entre Zoro, le samouraï légendaire Ryuma et le pays de Wano "cache encore des secrets que même Zoro ignore sur lui-même". Une formulation délibérément floue qui laisse entendre une révélation future sur ses origines.</p>
+    <h3>Les théories des fans</h3>
+    <p>La communauté One Piece théorise depuis des années sur un éventuel fruit du démon pour Zoro, ou sur une ascendance directe de Ryuma. Certains fans pointent vers le fait que Zoro est le seul nakama dont les origines familiales restent floues après plus de 1100 chapitres — un silence qui ne peut pas être innocent de la part d'Oda.</p>`
+  },
+  top2026: {
+    emoji:'🏆', tag:'Top · 2026', date:'5 avril 2026', time:'10 min', views:'12 100',
+    title:'Top 10 meilleurs animes de 2026 jusqu\'ici — notre classement',
+    content:`<p>Nous sommes en avril 2026 et la saison anime est déjà généreuse. Voici notre classement des 10 meilleures séries diffusées depuis janvier.</p>
+    <h3>1. Dungeon Meshi saison 2</h3><p>Trigger au sommet de son art. Une suite qui surpasse déjà la première saison dans son ambition narrative.</p>
+    <h3>2. Frieren : Beyond Journey's End (épisodes finaux)</h3><p>La conclusion de l'arc examen des mages restera dans les mémoires. Un climax à la hauteur de l'ensemble de la série.</p>
+    <h3>3. Re:Zero saison 4 (annoncée)</h3><p>Déjà en tête de liste avant même sa sortie, tant l'attente est grande.</p>
+    <h3>4. Bleach TYBW Partie 3</h3><p>La confrontation Ichigo/Yhwach approche et Studio Pierrot maintient un niveau d'animation exceptionnel.</p>
+    <h3>5-10</h3><p>Solo Leveling (arc Monarque), Blue Lock saison 2, Shangri-La Frontier saison 2, Spy x Family saison 2 (fin), Kaiju No.8 saison 2, et The Apothecary Diaries.</p>`
+  },
+  topisekai: {
+    emoji:'🌀', tag:'Top · Isekai', date:'2 avril 2026', time:'8 min', views:'9 400',
+    title:'Top 10 isekai de tous les temps selon les fans — notre classement définitif',
+    content:`<p>Le genre isekai est l'un des plus prolifiques de l'animation japonaise. Entre les pépites et les déceptions, voici notre sélection des 10 meilleures séries du genre selon les votes de notre communauté.</p>
+    <h3>1. Re:Zero</h3><p>Le standard absolu du genre. La déconstruction du héros isekai typique reste inégalée.</p>
+    <h3>2. Mushoku Tensei</h3><p>Le worldbuilding le plus cohérent et ambitieux du genre, malgré ses controverses.</p>
+    <h3>3. Frieren</h3><p>Techniquement un post-fantasy, mais l'esprit isekai est là. Chef-d'œuvre absolu.</p>
+    <h3>4. Overlord</h3><p>La série qui a renversé le point de vue en faisant du héros le grand méchant.</p>
+    <h3>5-10</h3><p>That Time I Got Reincarnated as a Slime, Konosuba, The Rising of the Shield Hero (saison 1), Sword Art Online (Aincrad), No Game No Life, et Shangri-La Frontier.</p>`
+  },
+  topmappa: {
+    emoji:'🎬', tag:'Top · Studios', date:'1 avril 2026', time:'12 min', views:'7 600',
+    title:'Tous les animes MAPPA classés du pire au meilleur',
+    content:`<p>MAPPA est l'un des studios les plus controversés et les plus talentueux de l'industrie. Entre surmenage des équipes et résultats visuels saisissants, voici notre classement de leur catalogue.</p>
+    <h3>Tier S — Chefs-d'œuvre</h3><p>Jujutsu Kaisen saison 2 (arc Shibuya), Vinland Saga saison 2, Attack on Titan Final Season.</p>
+    <h3>Tier A — Excellents</h3><p>Chainsaw Man, Jujutsu Kaisen saison 1, Dororo, Banana Fish.</p>
+    <h3>Tier B — Très bons</h3><p>Yuri!!! on Ice, Attack on Titan Final Season Part 2, Jujutsu Kaisen saison 3.</p>
+    <h3>Tier C — Corrects</h3><p>Kakegurui, Zombie Land Saga, Attack on Titan The Final Chapters.</p>
+    <h3>Tier D — Décevants</h3><p>Quelques productions alimentaires que nous préférons ne pas nommer ici pour ne blesser personne.</p>`
+  },
+  shangrila: {
+    emoji:'🔮', tag:'Fantasy · Review 8/10', date:'30 mars 2026', time:'5 min', views:'4 100',
+    title:'Shangri-La Frontier saison 2 : l\'isekai gaming à son meilleur niveau',
+    content:`<p>C2C Studios continue de prouver avec la saison 2 de Shangri-La Frontier que le genre "isekai gaming" peut être traité avec sérieux et ambition. Cette deuxième saison confirme tout le potentiel entrevu dans la première.</p>
+    <h3>Un boss fight mémorable</h3>
+    <p>L'affrontement contre Wethermon the Tombguard, adapté avec une fidélité remarquable au manga de Ryosuke Fuji, est l'un des highlights de la saison. La mise en scène joue intelligemment sur les spécificités du jeu vidéo pour créer une tension que peu d'animes de combat parviennent à atteindre.</p>
+    <h3>Un sound design au top</h3>
+    <p>Le point fort de cette saison est son traitement sonore. Chaque combat dans le monde du jeu bénéficie d'une bande-son originale soignée, avec des effets sonores qui donnent une identité propre à chaque type d'ennemi. C'est un détail qui fait une vraie différence à l'immersion.</p>
+    <h3>Notre verdict</h3>
+    <p>Une saison 2 solide qui monte en puissance. Shangri-La Frontier confirme sa place dans le haut du panier du genre. Note : 8/10.</p>`
+  }
+};
+
+// ---- NAV ----
+function showPage(name) {
+  document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const pg = document.getElementById('page-' + name);
+  if(pg) pg.classList.add('active');
+  const nav = document.getElementById('nav-' + name);
+  if(nav) nav.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+// ---- MODAL ----
+function openArticle(id) {
+  const a = articles[id];
+  if(!a) return;
+  document.getElementById('modalEmoji').textContent = a.emoji;
+  document.getElementById('modalTag').textContent = a.tag;
+  document.getElementById('modalTitle').textContent = a.title;
+  document.getElementById('modalMeta').innerHTML = `<span>📅 ${a.date}</span><span>⏱ ${a.time} de lecture</span><span>👁 ${a.views} vues</span>`;
+  document.getElementById('modalContent').innerHTML = a.content;
+  const overlay = document.getElementById('modalOverlay');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Share buttons
+  const pageUrl = encodeURIComponent(window.location.href);
+  const titleEnc = encodeURIComponent(a.title);
+  document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${titleEnc}&url=${pageUrl}&via=AkuAnime`;
+  document.getElementById('shareFB').href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+  document.getElementById('shareWA').href = `https://wa.me/?text=${titleEnc}%20${pageUrl}`;
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const btn = document.querySelector('.share-copy');
+    btn.textContent = '✅ Copié !';
+    setTimeout(() => btn.textContent = '🔗 Copier', 2000);
+  });
+}
+
+function closeModal(e) {
+  if(e.target === document.getElementById('modalOverlay')) closeModalBtn();
+}
+function closeModalBtn() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModalBtn(); });
+</script>
+</body>
+</html>
